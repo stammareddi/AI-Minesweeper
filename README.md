@@ -56,11 +56,11 @@ The agent starts out by selecting a random coordinate as its first move. If this
 
 For Example:
 
--Sentence B: “ At coordinate 5,5 we can infer that there are (4,4) ,(5,4) ,(4,6) (5,6), (6,5) , (6,6) coordinates that are unrevealed neighbors and out of them the clue tells us there is 1 mine within them.”
+- Sentence B: “ At coordinate 5,5 we can infer that there are (4,4) ,(5,4) ,(4,6) (5,6), (6,5) , (6,6) coordinates that are unrevealed neighbors and out of them the clue tells us there is 1 mine within them.”
 
--Sentence A: “ At coordinate 4,5 we can infer that there are (4,4) (5,4) (4,6) (5,6) coordinates that are unrevealed neighbors and out of them the clue tells us there is 1 mine within them.”
+- Sentence A: “ At coordinate 4,5 we can infer that there are (4,4) (5,4) (4,6) (5,6) coordinates that are unrevealed neighbors and out of them the clue tells us there is 1 mine within them.”
 
--Sentence B - A: We can infer that coordinate (6,5) (6,6) doesn’t have a mine guaranteeing it is 100 percent safe because its mine count will equal to 0
+- Sentence B - A: We can infer that coordinate (6,5) (6,6) doesn’t have a mine guaranteeing it is 100 percent safe because its mine count will equal to 0
 Likewise, if the remaining unrevealed coordinates count matches the clue which isn’t 0 we can infer that it is 100 percent a mine we can flag. The agent will try this subset with each and every element taking O(n2) time.
 
 
