@@ -91,8 +91,27 @@ When the difference of the clue of both coordinates is equal to the difference s
 
 ## AI Agent Performance 
 
+![alt text](graph.png)
+
 
 Here the smart agent is using the SAM method on top of logic alone. While the Basic agent was only using logic inferences.
 
 
 After analyzing the graph It shows that a mine density in range of 0-100 can be solved by using the basic agent alone as it is able to take care of most cases within those mine densities. This is when minesweeper is easy and basic logic alone can be used to infer clues. When we get to the 300-700 mine density range we can analyze that this is when the basic agent can’t infer anything as much and this is also when the minesweeper game becomes “hard.” We can clearly see that the SAM method being used by the smart agent helps improve the success rate for better mine identification. However, from 700-900 percent mine density we see the lines come back close to each other telling us that both the SAM method and basic logic rules aren’t enough to help the agent identify mines. In conclusion mine density which is less than 10 percent of the dim*dim size can be mostly solved with the basic agent. From 10 percent to 70 percent using the smart agent on top of the basic agent can help us identify mines much better. Lastly, if we try to use the smart agent on top of the basic agent from 70 percent and on we see that it doesn’t help us any more than not even using the smart agent at all.
+
+
+## Efficiency
+
+One of the constraints faced while implementing this is the SAM method being called on when the mine density is above 70 percent. When this happens it seems to not be able to do any more inference hence drastically slowing down the time. However, when the SAM method is used below 70 percent mine den- sity it helps improves our chances of flagging a mine. While the SAM method takes O(n2) time it is being able to infer new findings from doing subsets and being able to draw as much as it can out of every new move that occurs making it as efficient as it can be. Hence while the SAM method is costly it is most definitely worth the extra cost as it gives us new insights from existing data vs gathering new insights from new data and risking hitting a mine.
+
+
+## Closing Statement
+
+
+This paper verified using a algorithmic design decision such as the subset method for Minesweeper helps improves chances in successfully flagging a mine. The importance of handling guesses as a last resort in Minesweeper games will always have instances of guessing as that is the beauty of the game. Therefore, it is crucial that player incorporate efficient methods on performing nondeter- ministic moves. The findings gathered has supported the goal statement which was that other strategies can be used before falling to the last resort which is selecting a random coordinate.
+
+
+## References
+Weisstein, Eric W. ”Minesweeper.” From MathWorld–A Wolfram Web Re- source. https://mathworld.wolfram.com/Minesweeper.html
+
+
