@@ -1,4 +1,4 @@
-# AI-Minesweeper-
+# AI-Minesweeper
 
 
 ## About Minesweeper
