@@ -23,9 +23,11 @@ The four boards are:
       -  Consists of the adjacent mine count for each cell and for mine cells
 it has a value of 9
 2. Player Board
-       – Start off with all -1’s and it gets updated every time a new cell is opened by updating the cells -1 with whatever is at those coordinates in the minesweeper board.
+      -   Start off with all -1’s and it gets updated every time a new cell is opened by updating the cells -1 with whatever is at those coordinates in the minesweeper board.
+    
+    
 3. Revealed Board
-– Every time a cell is opened on the player board it will get updated here to fully guarantee that it has been a visited cell and the agent was able to deduce everything from it such as updating its knowledge base.
-– 1 means visited while 0 is unvisited
-– The game will continue on until the revealed board has no more 0’s
+      - Every time a cell is opened on the player board it will get updated here to fully guarantee that it has been a visited cell and the agent was able to deduce everything from it such as updating its knowledge base.
+      - 1 means visited while 0 is unvisited
+      - The game will continue on until the revealed board has no more 0’s
 
