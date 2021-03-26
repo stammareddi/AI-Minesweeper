@@ -66,3 +66,10 @@ Likewise, if the remaining unrevealed coordinates count matches the clue which i
 
 - If this fails it will fall to its last resort with is selecting a random coordinate to open. Then it will repeat those above steps in that order until the entire board has been revealed with ones in the revealed board.
 
+
+
+
+
+# Performance
+When looking at the play by play the agent was making, all the decisions made were valid as there was no decision that the player would have made differently. The cells were opened only if the smart agent was deemed 100 percent safe. Cells were also marked as flagged only if they were deemed 100 percent as a mine.
+
