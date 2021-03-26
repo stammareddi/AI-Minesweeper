@@ -7,4 +7,4 @@ Minesweeper is logic-based game played on rectangular board whose object is to l
 
 Deeper Analysis
 While minesweeper can be solved with logic alone in most cases there will be times when logic wont help. Here the agent also known as the player will have to choose a random coordinate and hope luck is on there side by revealing a safe cell.
-[Contribution guidelines for this project](docs/CONTRIBUTING.md)
+[Contribution guidelines for this project](example.png)
