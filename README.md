@@ -75,3 +75,24 @@ Likewise, if the remaining unrevealed coordinates count matches the clue which i
 # Performance
 When looking at the play by play the agent was making, all the decisions made were valid as there was no decision that the player would have made differently. The cells were opened only if the smart agent was deemed 100 percent safe. Cells were also marked as flagged only if they were deemed 100 percent as a mine.
 
+
+![alt text](performance1.png)
+
+First scenario: “ At coordinate (9,7), we can infer that there are 2 (9,6) , (8,6) coordinates that are unrevealed neighbors and out of them the clue tells us there are 1 mines within them.” “ At coordinate (8,7), we can infer that there are 3 (9,6) , (7,6) , (8,6) coordinates that are unrevealed neighbors and out of them the clue tells us there are 1 mines within them.”
+When the difference of the clue of both coordinates is 0 (ex:1-1 = 0), with the Smart Agent Method a.k.a. S.A.M (acronym) we are able to infer that the coordinates that are different between both sets will be safe which in this case would be (7,6) and in turn would be revealed on the player board and updated in the knowledge board
+
+
+![alt text](performance2.png)
+
+
+Second scenario: “ At coordinate (9,1), we can infer that there are 2 (9,0) , (8,0) coordinates that are unrevealed neighbors and out of them the clue tells us there are 1 mines within them.” “ At coordinate (8,1), we can infer that there are 3 (9,0) , (7,0) , (8,0) coordinates that are unrevealed neighbors and out of them the clue tells us there are 2 mines within them.”
+When the difference of the clue of both coordinates is equal to the difference set size between both coordinates (ex: 2 - 1 = 3 - 2), with the Smart Agent Method a.k.a. S.A.M (acronym) we are able to infer that the coordinates that are different coordinate(s) between both sets will be mines which in this case would be (7,0) and in turn would be flagged as a mine on the flagged board.
+
+
+## AI Agent Performance 
+
+
+Here the smart agent is using the SAM method on top of logic alone. While the Basic agent was only using logic inferences.
+
+
+After analyzing the graph It shows that a mine density in range of 0-100 can be solved by using the basic agent alone as it is able to take care of most cases within those mine densities. This is when minesweeper is easy and basic logic alone can be used to infer clues. When we get to the 300-700 mine density range we can analyze that this is when the basic agent can’t infer anything as much and this is also when the minesweeper game becomes “hard.” We can clearly see that the SAM method being used by the smart agent helps improve the success rate for better mine identification. However, from 700-900 percent mine density we see the lines come back close to each other telling us that both the SAM method and basic logic rules aren’t enough to help the agent identify mines. In conclusion mine density which is less than 10 percent of the dim*dim size can be mostly solved with the basic agent. From 10 percent to 70 percent using the smart agent on top of the basic agent can help us identify mines much better. Lastly, if we try to use the smart agent on top of the basic agent from 70 percent and on we see that it doesn’t help us any more than not even using the smart agent at all.
