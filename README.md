@@ -39,10 +39,11 @@ To represent the knowledge base a dictionary was used and for every key,value pa
 
 Here a sentence in the knowledge base can be read as: 
 
-“At (x,y) coordinate, we can infer that there are k coordinates that are unrevealed neighbors and out of them the clue tells us there are m mines within them.”
+      - “At (x,y) coordinate, we can infer that there are k coordinates that are unrevealed neighbors and out of them the clue tells us there are m mines within them.”
 
 How it was programmed :
-Key : coordinate , Value : (clue : mine count , unrevealed neighbors)
+
+      - Key : coordinate , Value : (clue : mine count , unrevealed neighbors)
 
 ## What can the agent infer?
 Whenever a new cell is revealed the agent will add it to the knowledge base as a sentence. Once this sentence has been added to the dictionary, it will update its existing sentences in the knowledge base where these new cell coordinates will be removed from those sentences’ unrevealed neighbors. This is being done by the agent because unrevealed neighbors are only supposed to have coordi- nates that haven’t been visited guaranteeing the agent that it will have the most up-to-date information about the board after making that move. When it do this thd agents knowledge base is able to deduce everything it can from every possible move that can happen on the board.
