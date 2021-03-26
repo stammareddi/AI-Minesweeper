@@ -38,6 +38,7 @@ it has a value of 9
 To represent the knowledge base a dictionary was used and for every key,value pair in the dictionary, it was considered a sentence.
 
 Here a sentence in the knowledge base can be read as: 
+
 “At (x,y) coordinate, we can infer that there are k coordinates that are unrevealed neighbors and out of them the clue tells us there are m mines within them.”
 
 How it was programmed :
