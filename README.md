@@ -34,7 +34,7 @@ it has a value of 9
 4. Flagged board
       - Will all have 0’s and the assumed mines will be marked as 1’s
  
-### knowledge base  
+### Knowledge Base  
 To represent the knowledge base a dictionary was used and for every key,value pair in the dictionary, it was considered a sentence.
 
 Here a sentence in the knowledge base can be read as: 
@@ -44,4 +44,19 @@ Here a sentence in the knowledge base can be read as:
 How it was programmed :
 Key : coordinate , Value : (clue : mine count , unrevealed neighbors)
 
+## What can the agent infer?
+Whenever a new cell is revealed the agent will add it to the knowledge base as a sentence. Once this sentence has been added to the dictionary, it will update its existing sentences in the knowledge base where these new cell coordinates will be removed from those sentences’ unrevealed neighbors. This is being done by the agent because unrevealed neighbors are only supposed to have coordi- nates that haven’t been visited guaranteeing the agent that it will have the most up-to-date information about the board after making that move. When it do this thd agents knowledge base is able to deduce everything it can from every possible move that can happen on the board.
+
+
+## How the agent makes a decision
+The agent starts out by selecting a random coordinate as its first move. If this was a mine it will keep track of the unlucky mine hits it had. Otherwise, it will reveal it on the player board. During the next iteration based on the mine count clue and it being revealed on the player board , the agent will try to see if it can safely reveal more cells or flag mines that are 100 percent true based on logic alone. For instance, if a mine count was 2 and the agent had marked some 2 neighboring cells as flags then theoretically it can open the other 6 possible neighbors with confidence. Likewise, if te agent wasn’t able to deduce any safe cells while analyzing the player board it will try to see if it can use logic to flag any cells as mines that it is 100 percent sure of. For instance, if a cell had a mine count of 5 and 3 have been revealed as safes already then theoretically the rest of the mines are 100 percent mines which can be flagged. If both these logic’s don’t help the agent infer anything it will call a subset check method where we will try to see if any sentences unrevealed neighbors is a sub- set of another sentence in the knowledge base. If it is then the agent will do a little more digging meaning it will do sentence B values minus sentence A values.
+
+
+
+For Example:
+Sentence B: “ At coordinate 5,5 we can infer that there are (4,4) ,(5,4) ,(4,6) (5,6), (6,5) , (6,6) coordinates that are unrevealed neighbors and out of them the clue tells us there is 1 mine within them.”
+Sentence A: “ At coordinate 4,5 we can infer that there are (4,4) (5,4) (4,6) (5,6) coordinates that are unrevealed neighbors and out of them the clue tells us there is 1 mine within them.”
+Sentence B - A: We can infer that coordinate (6,5) (6,6) doesn’t have a mine guaranteeing it is 100 percent safe because its mine count will equal to 0
+Likewise, if the remaining unrevealed coordinates count matches the clue which isn’t 0 we can infer that it is 100 percent a mine we can flag. The agent will try this subset with each and every element taking O(n2) time.
+If this fails it will fall to its last resort with is selecting a random coordinate to open. Then it will repeat those above steps in that order until the entire board has been revealed with ones in the revealed board.
 
